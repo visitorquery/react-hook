@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/visitorquery/react-hook/compare/v0.0.4...v0.0.5) (2025-02-18)
+
+
+### Bug Fixes
+
+* publish? ([1dbed70](https://github.com/visitorquery/react-hook/commit/1dbed70c194eccec6e4e228ba73dfd988cca0385))
+
 ### [0.0.4](https://github.com/visitorquery/react-hook/compare/v0.0.3...v0.0.4) (2025-02-18)
 
 
