@@ -13,7 +13,8 @@
 		"build": "bun build --target=node ./src/index.ts --outfile=dist/index.js --external react --external react-dom && bun run build:declaration",
 		"build:declaration": "tsc --emitDeclarationOnly --project tsconfig.types.json",
 		"postbuild": "rimraf tsconfig.types.tsbuildinfo",
-		"release": "git fetch --tags -f && standard-version && git push --follow-tags origin master && bun publish --access public"
+		"push": "git fetch --tags -f && standard-version && git push --follow-tags origin master && bun publish --access public",
+		"release": "pnpm run build && pnpm run build:declaration && pnpm run push"
 	},
 	"peerDependencies": {
 		"@types/react": "^19.0.10",
