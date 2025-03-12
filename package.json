@@ -1,5 +1,5 @@
 {
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"name": "@visitorquery/react",
 	"module": "src/index.ts",
 	"type": "module",
