@@ -1,34 +1,31 @@
-import { useState, useEffect } from 'react';
+import {useEffect} from 'react';
+import {useScript} from "./hooks.ts";
 
-export type TResponse = {
-    is: boolean;
-    confidence: number;
+declare global {
+	interface Window {
+		VisitorQuery: any;
+	}
 }
 
-export function useVisitorQuery(
-    publicApiKey: string,
-    endpoint: string = 'https://main.check.visitorquery.com/'
-) {
-    const [visitorQuery, setVisitorQuery] = useState<TResponse>({
-        is: false,
-        confidence: 0,
-    });
+type Params = {
+	ApiKey: string;
+	SessionId: string;
+	Endpoint?: string;
+}
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(endpoint, {
-                    headers: { 'X-Api-Key': publicApiKey },
-                });
-                const data = await response.json();
-                setVisitorQuery(data as TResponse);
-            } catch (error) {
-                console.error(`Error fetching visitorquery data: ${error}`);
-            }
-        };
+export function useVisitorQuery(p: Params) {
+	const defaultEndpoint = 'main.check.visitorquery.com';
+	const clientScript = useScript('https://cdn.visitorquery.com/visitorquery.js', {
+		removeOnUnmount: false,
+	});
 
-        fetchData().catch(console.error);
-    }, [publicApiKey, endpoint]);
-
-    return visitorQuery;
+	useEffect(() => {
+		if (typeof window.VisitorQuery !== "undefined") {
+			window.VisitorQuery.run({
+				ApiKey   : p.ApiKey,
+				Endpoint : p.Endpoint || defaultEndpoint,
+				SessionId: p.SessionId
+			});
+		}
+	}, [p, clientScript]);
 }
