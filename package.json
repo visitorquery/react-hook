@@ -1,7 +1,7 @@
 {
 	"version": "0.0.13",
 	"name": "@visitorquery/react",
-	"module": "src/index.tsx",
+	"module": "./dist/index.js",
 	"type": "module",
 	"devDependencies": {
 		"@vitejs/plugin-react": "^4.3.4",
