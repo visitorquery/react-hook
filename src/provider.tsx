@@ -9,9 +9,9 @@ declare global {
 }
 
 type VisitorQueryState = {
-	Started: boolean;
-	Ended: boolean;
-	Errored?: boolean;
+	started: boolean;
+	ended: boolean;
+	errored?: boolean;
 }
 
 // Create context
@@ -45,8 +45,8 @@ export function VisitorQueryProvider(
 	});
 
 	const [state, setState] = useState<VisitorQueryState>({
-		Started: false,
-		Ended  : false,
+		started: false,
+		ended  : false,
 	});
 
 	// Memoize params to prevent unnecessary re-renders
@@ -65,21 +65,21 @@ export function VisitorQueryProvider(
 				SessionId: params.SessionId,
 				onOpen   : () => {
 					setState({
-						Started: true,
-						Ended  : false,
+						started: true,
+						ended  : false,
 					});
 				},
 				onClose  : () => {
 					setState({
-						Started: true,
-						Ended  : true,
+						started: true,
+						ended  : true,
 					});
 				},
 				onError  : (err: Event) => {
 					setState({
-						Started: true,
-						Ended  : true,
-						Errored: true,
+						started: true,
+						ended  : true,
+						errored: true,
 					});
 					console.error(err);
 				}
