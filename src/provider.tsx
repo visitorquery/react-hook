@@ -8,12 +8,6 @@ declare global {
 	}
 }
 
-type VisitorQueryParams = {
-	ApiKey: string;
-	SessionId: string;
-	Endpoint?: string;
-}
-
 type VisitorQueryState = {
 	Started: boolean;
 	Ended: boolean;
