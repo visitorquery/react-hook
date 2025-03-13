@@ -12,6 +12,7 @@ export default defineConfig({
 			entry  : path.resolve(__dirname, 'src/index.ts'),
 			formats: ["es"],
 			name   : "visitorquery-react",
+			fileName: "index",
 		},
 		rollupOptions: {
 			external: [
