@@ -49,20 +49,13 @@ export function VisitorQueryProvider(
 		ended  : false,
 	});
 
-	// Memoize params to prevent unnecessary re-renders
-	const params = useMemo(() => ({
-		ApiKey   : apiKey,
-		SessionId: sessionId,
-		Endpoint : endpoint || defaultEndpoint,
-	}), [apiKey, sessionId, endpoint, defaultEndpoint]);
-
 	useEffect(() => {
 		// Only run if script is loaded and VisitorQuery is available
 		if (typeof window.VisitorQuery !== "undefined") {
 			window.VisitorQuery.run({
-				ApiKey   : params.ApiKey,
-				Endpoint : params.Endpoint,
-				SessionId: params.SessionId,
+				ApiKey   : apiKey,
+				Endpoint : endpoint || defaultEndpoint,
+				SessionId: sessionId,
 				onOpen   : () => {
 					setState({
 						started: true,
@@ -85,7 +78,7 @@ export function VisitorQueryProvider(
 				}
 			});
 		}
-	}, [params, clientScript]);
+	}, [apiKey, endpoint, sessionId, clientScript]);
 
 	// Create context value with memoization to prevent unnecessary renders
 	const contextValue = useMemo(() => ({
