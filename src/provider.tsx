@@ -37,7 +37,7 @@ export type VisitorQueryProviderProps = {
 	 */
 	endpoint?: string;
 
-	children: React.ReactNode;
+	children?: React.ReactNode;
 
 	/**
 	 * A trigger that can be used to re-run the VisitorQuery script.
