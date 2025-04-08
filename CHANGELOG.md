@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.21](https://github.com/visitorquery/react-hook/compare/v0.0.20...v0.0.21) (2025-04-08)
+
+
+### Bug Fixes
+
+* lowered react peer dep ([3088b29](https://github.com/visitorquery/react-hook/commit/3088b291fe94a3d0c3511576d27ee98b29e98c53))
+
 ### [0.0.20](https://github.com/visitorquery/react-hook/compare/v0.0.19...v0.0.20) (2025-04-08)
 
 
