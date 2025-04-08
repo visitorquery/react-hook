@@ -22,7 +22,7 @@ type VisitorQueryContextType = VisitorQueryState & {
 const VisitorQueryContext = createContext<VisitorQueryContextType | null>(null);
 
 // Provider props
-type VisitorQueryProviderProps = {
+export type VisitorQueryProviderProps = {
 	apiKey: string;
 
 	/**
