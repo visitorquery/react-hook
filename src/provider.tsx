@@ -24,17 +24,32 @@ const VisitorQueryContext = createContext<VisitorQueryContextType | null>(null);
 // Provider props
 type VisitorQueryProviderProps = {
 	apiKey: string;
+
+	/**
+	 * A unique identifier for the session. This is used in order to later
+	 * pull results from the VisitorQuery API.
+	 */
 	sessionId: string;
+
+	/**
+	 * The endpoint to use for the VisitorQuery script. Useful in cases when
+	 * you are using custom/vanity domains
+	 */
 	endpoint?: string;
+
 	children: React.ReactNode;
+
+	/**
+	 * A trigger that can be used to re-run the VisitorQuery script.
+	 * This could be a route change or any other event that you want to use to
+	 * re-initialize the VisitorQuery script.
+	 */
+	trigger?: string;
 };
 
 export function VisitorQueryProvider(
 	{
-		apiKey,
-		sessionId,
-		endpoint,
-		children
+		apiKey, sessionId, endpoint, children, trigger
 	}: VisitorQueryProviderProps
 ) {
 	const defaultEndpoint = 'main.check.visitorquery.com';
@@ -78,7 +93,7 @@ export function VisitorQueryProvider(
 				}
 			});
 		}
-	}, [apiKey, endpoint, sessionId, clientScript]);
+	}, [apiKey, endpoint, sessionId, clientScript, trigger]);
 
 	// Create context value with memoization to prevent unnecessary renders
 	const contextValue = useMemo(() => ({

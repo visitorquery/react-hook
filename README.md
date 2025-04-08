@@ -14,20 +14,5 @@ This plugin requires a valid api key (Public api key) and that you provision a s
 please visit our website
 at [visitorquery.com](https://visitorquery.com) and pick a suitable plan.
 
-Example usage on our own website (nextjs), on the checkout page, before openning the payment dialog:
-
-```typescript
-import {useVisitorQuery} from "@visitorquery/react";
-
-export default function LayoutComponent() {
-	// visitorquery should be loaded and your visitor assessed
-	// to check the result, issue a GET request from your backend
-	const visitorQuery = useVisitorQuery({
-		// use your project's !!PUBLIC!! api key here
-		ApiKey   : process.env.NEXT_PUBLIC_VISITOR_QUERY_API_KEY!,
-		SessionId: "unique-session-id-to-later-identify-the-visitor",
-	});
-}
-```
-
-For more info and up to date documentation, please visit our [official page](https://visitorquery.com/docs).
+For more info and up to date documentation, please visit
+our [official docs](https://docs.visitorquery.com/integrations/react) for this plugin.
