@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.17](https://github.com/visitorquery/react-hook/compare/v0.0.16...v0.0.17) (2025-04-08)
+
+
+### Features
+
+* added a trigger param ([96851ae](https://github.com/visitorquery/react-hook/commit/96851aefcd77aec749249f8fbd0366040a9b4b99))
+
 ### [0.0.16](https://github.com/visitorquery/react-hook/compare/v0.0.15...v0.0.16) (2025-03-13)
 
 
