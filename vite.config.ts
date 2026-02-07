@@ -4,15 +4,20 @@ import {defineConfig} from 'vite';
 import dts from 'vite-plugin-dts';
 
 export default defineConfig({
-	plugins: [react(), dts({include: ['src']})],
+	plugins: [
+		react({
+		  jsxRuntime: 'classic', 
+		}),
+		dts({include: ['src']})
+	],
 	build  : {
 		minify       : 'esbuild',
 		emptyOutDir  : true,
 		lib          : {
 			entry  : path.resolve(__dirname, 'src/index.ts'),
-			formats: ["es"],
+			formats: ["es", "cjs"],
 			name   : "visitorquery-react",
-			fileName: "index",
+			fileName: (format) => `index.${format === 'es' ? 'mjs' : 'cjs'}`,
 		},
 		rollupOptions: {
 			external: [
@@ -24,7 +29,6 @@ export default defineConfig({
 				globals: {
 					'react'            : 'react',
 					'react-dom'        : 'ReactDOM',
-					'react/jsx-runtime': 'react/jsx-runtime',
 				},
 			},
 		},
