@@ -1,45 +1,44 @@
 {
-	"version": "0.0.21",
-	"name": "@visitorquery/react",
-	"module": "./dist/index.js",
-	"type": "module",
-	"devDependencies": {
-		"@vitejs/plugin-react": "^4.3.4",
-		"vite": "^6.2.5",
-		"vite-plugin-dts": "^4.5.3"
-	},
-	"access": "public",
-	"main": "dist/index.ts",
-	"types": "dist/index.d.ts",
-	"scripts": {
-		"build": "tsc --p ./tsconfig.build.json && vite build",
-		"push": "git fetch --tags -f && standard-version && git push --follow-tags origin master && pnpm publish --access public",
-		"release": "pnpm run build && pnpm run push"
-	},
-	"peerDependencies": {
-		"@types/react": "^18",
-		"react": "^18",
-		"react-dom": "^18",
-		"typescript": "^5.0.0"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/visitorquery/react-hook.git"
-	},
-	"keywords": [
-		"fraud",
-		"antifraud",
-		"chargeback",
-		"proxy",
-		"visitorquery",
-		"vpn",
-		"detect"
-	],
-	"author": "VisitorQuery",
-	"license": "MIT",
-	"files": [
-		"dist/*.js",
-		"dist/*.jsx",
-		"dist/*.d.ts"
-	]
+  "version": "0.0.22",
+  "name": "@visitorquery/react",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.2.5",
+    "vite-plugin-dts": "^4.5.3"
+  },
+  "access": "public",
+  "scripts": {
+    "build": "tsc --p ./tsconfig.build.json && vite build",
+    "push": "git fetch --tags -f && standard-version && git push --follow-tags origin master && pnpm publish --access public",
+    "release": "pnpm run build && pnpm run push"
+  },
+  "peerDependencies": {
+    "@types/react": ">=16.8.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "typescript": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visitorquery/react-hook.git"
+  },
+  "keywords": [
+    "fraud", "antifraud", "chargeback", "proxy", "visitorquery", "vpn", "detect"
+  ],
+  "author": "VisitorQuery",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ]
 }
