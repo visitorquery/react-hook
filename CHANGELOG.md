@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.24](https://github.com/visitorquery/react-hook/compare/v0.0.23...v0.0.24) (2026-02-07)
+
+
+### Bug Fixes
+
+* support for older reacts ([29f9f6d](https://github.com/visitorquery/react-hook/commit/29f9f6d05f316524820fa72d0014260f8f8de3e4))
+
 ### [0.0.23](https://github.com/visitorquery/react-hook/compare/v0.0.21...v0.0.23) (2026-02-07)
 
 ### [0.0.21](https://github.com/visitorquery/react-hook/compare/v0.0.20...v0.0.21) (2025-04-08)
